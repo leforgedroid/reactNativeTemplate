@@ -27,6 +27,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {navigationRef} from './RootNavigation';
 import {Home} from './src/pages/Home';
 import {Splash} from './src/pages/Splash';
 import {Login} from './src/pages/Login';
@@ -37,7 +38,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"

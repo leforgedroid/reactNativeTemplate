@@ -2,16 +2,18 @@ import React from 'react';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {View, Text, StyleSheet, Button} from 'react-native';
-import {NavigationContainerProps} from '@react-navigation/native';
+import * as RootNavigation from '../../RootNavigation';
 
 declare var global: {HermesInternal: null | {}};
 
 export const Home = () => {
-  console.log('navigation: ', typeof navigation);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
-      <Button title="Go to Login" onPress={() => navigation.push('Login')} />
+      <Button
+        title="Go to Login"
+        onPress={() => RootNavigation.navigate('Login')}
+      />
     </View>
   );
 };
